@@ -1,30 +1,22 @@
-Walker[] walkers;
-int WIDTH = 640;
-int HEIGHT = 360;
+ConnectedWalkers[] connectome;
+int WIDTH = 1280;
+int HEIGHT = 720;
+int size = 20;
 
 void setup() {
     size(WIDTH, HEIGHT);
     background(255);
-    walkers = new Walker[22];
-    
-    for (int i = 0; i < walkers.length; ++i) {
-        walkers[i] = new Walker();
-        walkers[i].x = int(random(WIDTH));
-        walkers[i].y = int(random(HEIGHT));
+    connectome = new ConnectedWalkers[size];
+    for (int i = 0; i < size; ++i) {
+        connectome[i] = new ConnectedWalkers(round(random(WIDTH)), round(random(HEIGHT)), round(random(250)), round(random(10)));
     }
 }
 
 void draw() {
     clear();
     background(255);
-    for (int i = 0; i < walkers.length; ++i) {
-        walkers[i].step();
-    }
-
-    for(int i = 0; i < walkers.length; ++i) {
-        for (int j = 0; j < walkers.length; ++j) {
-            stroke(0);
-            line(walkers[i].x, walkers[i].y, walkers[j].x, walkers[j].y);
-        }
+    for (ConnectedWalkers con : connectome) {
+        con.step();
+        con.display();
     }
 }

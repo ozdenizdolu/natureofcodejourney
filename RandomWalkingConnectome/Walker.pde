@@ -2,9 +2,9 @@ class Walker {
     int x;
     int y;
     
-    Walker() {
-        x = width/2;
-        y = height/2;
+    Walker(int x, int y) {
+        this.x = x;
+        this.y = y;
     } 
 
     void display() {
