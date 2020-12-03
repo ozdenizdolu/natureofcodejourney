@@ -1,1 +1,1 @@
-!()[out.gif]
+![](result.webp)
