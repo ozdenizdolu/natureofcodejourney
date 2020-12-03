@@ -9,4 +9,5 @@ void setup() {
 void draw() {
     w.step();
     w.display();
+    saveFrame("#######.png");
 }

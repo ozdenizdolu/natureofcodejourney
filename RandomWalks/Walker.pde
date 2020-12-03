@@ -13,7 +13,7 @@ class Walker {
     }
     
     void step() {
-        x += round(random(2) - 1);
-        y += round(random(2) - 1);
+        x += round(random(-1,1));
+        y += round(random(-1,1));
     }
 }
