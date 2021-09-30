@@ -19,4 +19,5 @@ void draw() {
         s[i].step();
         s[i].display(); 
     }
+    //saveFrame("test####.jpg");
 }
